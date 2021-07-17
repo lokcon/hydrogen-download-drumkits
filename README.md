@@ -1,0 +1,3 @@
+- Download all drumkits
+- Transposing a song
+- Re-ordering a song
