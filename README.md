@@ -2,7 +2,7 @@
 Python script to download Hydrogen drumkits from all configured server.
 
 ## Motivation
-The [Hydrogen drum machine](https://github.com/hydrogen-music/hydrogen) has to ability to subscribe to drumkit servers, but does not seem to have the ability to download batch all drumkits. This script does that.
+The [Hydrogen drum machine](https://github.com/hydrogen-music/hydrogen) has to ability to subscribe to drumkit servers, but does not seem to have the ability to batch download all drumkits. This script does that.
 
 ## What does this do?
 The script loads at the drumkit server list configured in your Hydrogen config `~/.hydrogen/hydrogen.conf`, and download all drumkits to `~hydrogen/data/drumkits/`
