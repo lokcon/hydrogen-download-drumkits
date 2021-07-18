@@ -1,3 +1,8 @@
-- Download all drumkits
-- Transposing a song
-- Re-ordering a song
+# Hydrogen Download Drumkits
+Python script to download Hydrogen drumkits from all configured server.
+
+## Motivation
+
+## What does this do?
+
+## Usage
