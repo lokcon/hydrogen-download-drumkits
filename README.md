@@ -11,9 +11,9 @@ The script loads at the drumkit server list configured in your Hydrogen config `
 Run `python download.py`
 
 ## Limitation
-This script avoids re-downloading drumkits by checking if the drumkit already exists in `~/.hydrogen/data/drumkits/{DRUMKIT_FOLDER_NAME}`. It checks the drumkit directory name against the name of the drumkit file (`{DRUMKIT_NAME}.h2drumkit`).
+This script avoids re-downloading drumkits by checking if the drumkit already exists in `~/.hydrogen/data/drumkits/{DRUMKIT_DIR_NAME}`. It checks the drumkit directory name against the name of the drumkit file (`{DRUMKIT_NAME}.h2drumkit`).
 
-As the directory name will be the directory name inside the .h2drumkit zip file once extracted, this avoid redownloading most drumkits since the zip name and the zipped direcotry name is the same for most drumkits. For some others, this script unfortunately will redownload the drumkit on every invocation.
+This only works as long as `{DRUMKIT_DIR_NAME}`, which is the top-level directory name inside the `.h2drumkit` zip file once extracted, is the same as `{DRUMKIT_NAME}`. For most drumkits this is true, but not all.
 
 ## Example usage
 ```
