@@ -1,5 +1,5 @@
 # Hydrogen Download Drumkits
-Python script to download Hydrogen drumkits from all configured server.
+Python script to download Hydrogen drumkits from all configured servers.
 
 ## Motivation
 The [Hydrogen drum machine](https://github.com/hydrogen-music/hydrogen) has to ability to subscribe to drumkit servers, but does not seem to have the ability to batch download all drumkits. This script does that.
@@ -9,6 +9,11 @@ The script loads at the drumkit server list configured in your Hydrogen config `
 
 ## Usage
 Run `python download.py`
+
+## Limitation
+This script avoids re-downloading drumkits by checking if the drumkit already exists in `~/.hydrogen/data/drumkits/{DRUMKIT_FOLDER_NAME}`. It checks the drumkit directory name against the name of the drumkit file (`{DRUMKIT_NAME}.h2drumkit`).
+
+As the directory name will be the directory name inside the .h2drumkit zip file once extracted, this avoid redownloading most drumkits since the zip name and the zipped direcotry name is the same for most drumkits. For some others, this script unfortunately will redownload the drumkit on every invocation.
 
 ## Example usage
 ```
@@ -46,7 +51,3 @@ http://www.hydrogen-music.org/feeds/drumkit_list.php
 ...
 ```
 
-## Limitation
-This script avoids re-downloading drumkits by checking if the drumkit already exists in `~/.hydrogen/data/drumkits/{DRUMKIT_FOLDER_NAME}`. It checks the drumkit directory name against the name of the drumkit file (`{DRUMKIT_NAME}.h2drumkit`).
-
-As the directory name will be the directory name inside the .h2drumkit zip file once extracted, this avoid redownloading most drumkits since the zip name and the zipped direcotry name is the same for most drumkits. For some others, this script unfortunately will redownload the drumkit on every invocation.
