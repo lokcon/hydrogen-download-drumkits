@@ -5,7 +5,7 @@ Python script to download Hydrogen drumkits from all configured servers.
 The [Hydrogen drum machine](https://github.com/hydrogen-music/hydrogen) has to ability to subscribe to drumkit servers, but does not seem to have the ability to batch download all drumkits. This script does that.
 
 ## What does this do?
-The script loads at the drumkit server list configured in your Hydrogen config `~/.hydrogen/hydrogen.conf`, and download all drumkits to `~/hydrogen/data/drumkits/`
+The script loads at the drumkit server list configured in your Hydrogen config `~/.hydrogen/hydrogen.conf`, and download all drumkits to `~/.hydrogen/data/drumkits/`
 
 ## Usage
 Run `python download.py`
@@ -22,11 +22,11 @@ http://www.hydrogen-music.org/feeds/drumkit_list.php
 
     - Audiophob | soundcloud.com/audiophobdubstep
       http://hydro.smoors.de/Audiophob.h2drumkit
-      Drumkit already exist. Skipping.
+      Drumkit already exists. Skipping.
 
     - belofilms.com - AC-Guitar-Strums (flac) | Gabriel Verdugo Soto (belo@belofilms.com)
       http://hydro.smoors.de/belofilms_GuitarStrums.h2drumkit
-      Drumkit already exist. Skipping.
+      Drumkit already exists. Skipping.
 
     - BJA_Pacific | Luc Tunguay
       http://sourceforge.net/projects/hydrogen/files/Sound%20Libraries/Main%20sound%20libraries/BJA_Pacific.h2drumkit

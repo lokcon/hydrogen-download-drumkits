@@ -6,7 +6,6 @@ import io
 import sys
 import tarfile
 import xml.etree.ElementTree
-from pprint import pprint
 
 HYDROGEN_PATH = os.path.expanduser("~/.hydrogen/")
 HYDROGEN_CONFIG = "hydrogen.conf"
@@ -31,24 +30,26 @@ def main():
 
             drumkit_name = parse_drumkit_name(url)
             if drumkit_name is None:
-                print("      Unable to parse drumkit name in the format of {name}.h2drumkit from the url. Skipping.")
-                continue
+                print("      Unable to parse drumkit name in the format of '{name}.h2drumkit' from the url. This drumkit will not be skipped.")
+            else:
+                drumkit_path = drumkit_dir_path(drumkit_name)
+                if os.path.isdir(drumkit_path):
+                    print ("      Drumkit already exists. Skipping.")
+                    continue
 
-            drumkit_path = drumkit_dir_path(drumkit_name)
-            if os.path.isdir(drumkit_path):
-                print ("      Drumkit already exist. Skipping.")
-                continue
-
-            h2drumkit_file = fetch_http_bytes(url)
-            if h2drumkit_file is None:
-                print("      Failed to download h2drumkit file. Skipping.")
+            try:
+                h2drumkit_file = fetch_http_bytes(url)
+            except Exception as e:
+                print("      Failed to download h2drumkit file: '{}'. Skipping.".format(e))
                 continue
 
             try:
                 tar = tarfile.open(fileobj=h2drumkit_file, mode="r:*")
                 tar.extractall(path=os.path.join(HYDROGEN_PATH, HYDROGEN_DRUMKIT_PATH))
             except Exception as e:
-                print("      Error occured: '{}'. Skipping.".format(e))
+                print("      Error occured while decompressing file: '{}'. Skipping.".format(e))
+                continue
+
             print("")
 
         print("")
